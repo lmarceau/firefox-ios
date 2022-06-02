@@ -1735,7 +1735,7 @@
 "Settings.Homepage.Shortcuts.ShortcutsToggle.v100" = "Lối tắt";
 
 /* This string is the title of the toggle to disable the sponsored shortcuts functionnality which can be enabled in the shortcut sections. This toggle is in the settings page. */
-"Settings.Homepage.Shortcuts.SponsoredShortcutsToggle.v100" = "Các lối tắt được tài trợ";
+"Settings.Homepage.Shortcuts.SponsoredShortcutsToggle.v100" = "Lối tắt được tài trợ";
 
 /* Toggled OFF to hide the shortcuts section */
 "Settings.Homepage.Shortcuts.ToggleOff.v100" = "Tắt";
@@ -2196,9 +2196,6 @@
 
 /* In the Tabs Tray, summoned from the homepage, the title for the section containing non-grouped tabs, which will appear below grouped tabs */
 "TabTray.OtherTabs.Title" = "Các thẻ khác";
-
-/* The title for the tab tray in private mode */
-"TabTray.PrivateTitle" = "Các thẻ riêng tư";
 
 /* Describes what the Recently Closed tabs behavior is for users unfamiliar with it. */
 "TabTray.RecentlyClosed.Description" = "Các thẻ có sẵn ở đây trong 30 ngày. Sau thời gian đó, các thẻ sẽ tự động bị đóng.";
