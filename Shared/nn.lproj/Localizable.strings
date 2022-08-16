@@ -491,7 +491,7 @@
 "FxA.FirefoxAccount" = "Firefox-konto";
 
 /* Button label to go to Firefox Account settings */
-"FxA.ManageAccount" = "Handter kontoen og einingar";
+"FxA.ManageAccount" = "Handsam kontoen og einingar";
 
 /* Label when no internet is present */
 "FxA.NoInternetConnection" = "Ikkje noko internettsamband";
@@ -1024,7 +1024,7 @@
 "Menu.Library.StopReload" = "Stopp";
 
 /* Label for the button, displayed in the menu, takes you to screen to manage account when pressed. First argument is the display name for the current account */
-"Menu.ManageAccount.Label" = "Handter kontoen %@";
+"Menu.ManageAccount.Label" = "Handsam kontoen %@";
 
 /* Label for the new tab button in the menu page. Pressing this button opens a new tab. */
 "Menu.NewTab.v99" = "Ny fane";
@@ -1231,11 +1231,23 @@
 /* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
 "Onboarding.IntroAction.v102" = "Kom i gang";
 
+/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
+"Onboarding.IntroDescriptionPart1.v102" = "Uavhengig. Ideell. For alltid.";
+
+/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
+"Onboarding.IntroDescriptionPart2.v102" = "Forplikta til løftet om eit betre Internett for alle.";
+
 /* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
 "Onboarding.LaterAction.v102" = "Ikkje no";
 
 /* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
 "Onboarding.SyncAction.v102" = "Registrer deg og logg inn";
+
+/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
+"Onboarding.SyncDescription.v102" = "Hopp enkelt frå ein skjerm til ein annan med automatisk synkronisering av faner og bokmerke på tvers av einingar.";
+
+/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
+"Onboarding.SyncTitle.v102" = "Synkroniser for å ikkje sleppe tråden";
 
 /* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
 "Onboarding.WallpaperAction.v102" = "Vel bakgrunnsbilde";
