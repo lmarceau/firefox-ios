@@ -679,9 +679,6 @@
 /* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
 "Menu.TrackingProtectionListTitle.Social" = "सोशल ट्रैकर्स ब्लौक भेल";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "नया कथि छै";
-
 /* Accessibility label for the New Tab button in the tab toolbar.
    Accessibility Label for the tab toolbar New tab button */
 "New Tab" = "नया टैब";
@@ -746,7 +743,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "खोजोॅ";
+"Search" = "खोजियै";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "खोजोॅ अथवा पता भरोॅ";

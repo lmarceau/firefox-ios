@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Sekme: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "\"%@\" aramanız";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Son kaydedilenler";
 
@@ -295,9 +292,6 @@
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "Bilgi girmeyi kolaylaştırmak için araç çubuğu artık varsayılan olarak en altta.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Kişisel Firefox giriş sayfanız, kaldığınız yerden devam etmeyi kolaylaştırıyor. Son sekmeleriniz, yer imleriniz ve arama sonuçlarınız artık giriş sayfanızda.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Araç çubuğu ayarları";
@@ -1092,9 +1086,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "Paylaş";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Eşitlemek için giriş yapın";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Sekme gönderildi";
 
@@ -1197,9 +1188,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Bu sitede etkinleştir";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Yeni neler var?";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "mobil cihaz";
 
@@ -1242,6 +1230,12 @@
 
 /* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
 "Onboarding.SyncAction.v102" = "Kaydol ve giriş yap";
+
+/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
+"Onboarding.SyncDescription.v102" = "Cihazlarınız arasında sorunsuzca geçiş yapmak için sekmelerinizi ve yer imlerinizi otomatik olarak eşitleyin.";
+
+/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
+"Onboarding.SyncTitle.v102" = "Eşitleyin, bağlı kalın";
 
 /* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
 "Onboarding.WallpaperAction.v102" = "Duvar kâğıdını ayarla";
@@ -1409,7 +1403,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "Arama";
+"Search" = "Ara";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "Arama yapın veya adres yazın";
@@ -1618,9 +1612,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Açık";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Tema, ekran parlaklığınıza bağlı olarak otomatik olarak değişecektir. Temanın değiştiği eşiği ayarlayabilirsiniz. Daire, ekranınızın şu anki parlaklığını gösterir.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "MODU DEĞİŞTİR";
