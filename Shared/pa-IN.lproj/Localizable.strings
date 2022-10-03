@@ -14,7 +14,7 @@
 "Aa" = "Aa";
 
 /* About settings section title */
-"About" = "ਇਸ ਦੇ ਬਾਰੇ";
+"About" = "ਇਸ ਬਾਰੇ";
 
 /* The title for the pinning a shortcut action */
 "ActivityStream.ContextMenu.AddToShortcuts" = "ਸ਼ਾਰਟਕੱਟਾਂ ਵਿੱਚ ਜੋੜੋ";
@@ -41,7 +41,7 @@
 "ActivityStream.Shortcuts.SectionTitle" = "ਸ਼ਾਰਟਕੱਟ";
 
 /* The title for the setting page which lets you select the number of top site rows */
-"ActivityStream.TopSites.RowSettingFooter" = "ਕਤਾਰਾਂ ਤਹਿ ਕਰੋ";
+"ActivityStream.TopSites.RowSettingFooter" = "ਕਤਾਰਾਂ ਸੈੱਟ ਕਰੋ";
 
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "Add Tab" = "ਟੈਬ ਜੋੜੋ";
@@ -50,7 +50,7 @@
 "Add to Reading List" = "ਪੜ੍ਹਨ ਸੂਚੀ ਵਿੱਚ ਜੋੜੋ";
 
 /* Accessibility message e.g. spoken by VoiceOver after the current page gets added to the Reading List using the Reader View button, e.g. by long-pressing it or by its accessibility custom action. */
-"Added page to Reading List" = "ਪੜ੍ਹਨ ਸੂਚੀ ਵਿੱਚ ਸਫ਼ਾ ਜੋੜਿਆ ਗਿਆ";
+"Added page to Reading List" = "ਸਫ਼ੇ ਨੂੰ ਪੜ੍ਹਨ ਵਾਲਿਆਂ ਦੀ ਸੂਚੀ ਵਿੱਚ ਜੋੜਿਆ";
 
 /* Button to dismiss the 'Add Pass Failed' alert.  See https://support.apple.com/HT204003 for context on Wallet. */
 "AddPass.Error.Dismiss" = "ਠੀਕ ਹੈ";
@@ -198,6 +198,9 @@
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "ਜਾਣਕਾਰੀ ਭਰਨ ਨੂੰ ਸੌਖਾ ਕਰਨ ਲਈ ਟੂਲਬਾਰ ਹੁਣ ਮੂਲ ਰੂਪ ਵਿੱਚ ਹੇਠਾਂ ਹੁੰਦੀ ਹੈ।";
+
+/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
+"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "ਤੁਹਾਡੇ ਆਪਣੇ ਬਣਾਏ Firefox ਮੁੱਖ-ਸਫ਼ੇ ਨੇ ਹੁਣ ਜਿੱਥੇ ਤੁਸੀਂ ਛੱਡ ਕੇ ਗਏ ਸੀ, ਉਥੋਂ ਹੀ ਸ਼ੁਰੂ ਕਰਨਾ ਸੌਖਾ ਬਣਾ ਦਿੱਤਾ ਹੈ। ਆਪਣੀਆਂ ਸੱਜਰੀਆਂ ਟੈਬਾਂ, ਬੁੱਕਮਾਰਕ ਅਤੇ ਖੋਜ ਨਤੀਜੇ ਲੱਭੋ।";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "ਟੂਲਬਾਰ ਸੈਟਿੰਗਾਂ";
@@ -1389,6 +1392,18 @@
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the section that allows users to change the wallpaper settings for the application. */
 "Settings.Home.Option.Wallpaper.CollectionTitle" = "ਸ਼ੁਰੂਆਤੀ ਸਕਰੀਨ";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the button title of the group of wallpapers that are seasonally available to the user. */
+"Settings.Home.Option.Wallpaper.LearnMore.v106" = "ਹੋਰ ਜਾਣੋ";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the default description of the group of wallpapers that are seasonally available to the user. */
+"Settings.Home.Option.Wallpaper.LimitedEdition.Default.Description.v106" = "ਨਵੇਂ ਭੰਡਾਰ ਨੂੰ ਵਰਤ ਕੇ ਵੇਖੋ।";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the description of the group of wallpapers that are seasonally available to the user. */
+"Settings.Home.Option.Wallpaper.LimitedEdition.IndependentVoices.Description.v106" = "ਨਵਾਂ ਆਜ਼ਾਦ ਆਵਾਜ਼ਾਂ ਦਾ ਭੰਡਾਰ ਹੈ।";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the group of wallpapers that are seasonally available to the user. */
+"Settings.Home.Option.Wallpaper.LimitedEdition.Title.v106" = "ਲਿਮਟਡ ਐਡੀਸ਼ਨ";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the string titling the switch button's function, which allows a user to toggle wallpaper switching from the homepage logo on or off. */
 "Settings.Home.Option.Wallpaper.SwitchTitle.v99" = "Firefox ਮੁੱਖ-ਸਫ਼ੇ ਲੋਗੋ ਨੂੰ ਛੂਹ ਕੇ ਵਾਲਪੇਪਰ ਬਦਲੋ";
