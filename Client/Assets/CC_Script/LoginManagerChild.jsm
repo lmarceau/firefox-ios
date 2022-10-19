@@ -30,26 +30,29 @@ const LOG_MESSAGE_FIELD_EDIT = "field edit";
 const { XPCOMUtils } = ChromeUtils.importESModule(
   "resource://gre/modules/XPCOMUtils.sys.mjs"
 );
-const { AppConstants } = ChromeUtils.import(
-  "resource://gre/modules/AppConstants.jsm"
+const { AppConstants } = ChromeUtils.importESModule(
+  "resource://gre/modules/AppConstants.sys.mjs"
 );
-const { PrivateBrowsingUtils } = ChromeUtils.import(
-  "resource://gre/modules/PrivateBrowsingUtils.jsm"
+const { PrivateBrowsingUtils } = ChromeUtils.importESModule(
+  "resource://gre/modules/PrivateBrowsingUtils.sys.mjs"
 );
-const { CreditCard } = ChromeUtils.import(
-  "resource://gre/modules/CreditCard.jsm"
+const { CreditCard } = ChromeUtils.importESModule(
+  "resource://gre/modules/CreditCard.sys.mjs"
 );
 
 const lazy = {};
 
+ChromeUtils.defineESModuleGetters(lazy, {
+  ContentDOMReference: "resource://gre/modules/ContentDOMReference.sys.mjs",
+  DeferredTask: "resource://gre/modules/DeferredTask.sys.mjs",
+  FormLikeFactory: "resource://gre/modules/FormLikeFactory.sys.mjs",
+});
+
 XPCOMUtils.defineLazyModuleGetters(lazy, {
-  DeferredTask: "resource://gre/modules/DeferredTask.jsm",
-  FormLikeFactory: "resource://gre/modules/FormLikeFactory.jsm",
   LoginFormFactory: "resource://gre/modules/LoginFormFactory.jsm",
   LoginRecipesContent: "resource://gre/modules/LoginRecipes.jsm",
   LoginHelper: "resource://gre/modules/LoginHelper.jsm",
   InsecurePasswordUtils: "resource://gre/modules/InsecurePasswordUtils.jsm",
-  ContentDOMReference: "resource://gre/modules/ContentDOMReference.jsm",
 });
 
 XPCOMUtils.defineLazyServiceGetter(
@@ -2325,6 +2328,10 @@ class LoginManagerChild extends JSWindowActorChild {
       targetField,
       ...docState._getFormFields(form, true, recipes, { ignoreConnect }),
     };
+
+    if (fields.usernameField) {
+      lazy.gFormFillService.markAsLoginManagerField(fields.usernameField);
+    }
 
     // It's possible the field triggering this message isn't one of those found by _getFormFields' heuristics
     if (
