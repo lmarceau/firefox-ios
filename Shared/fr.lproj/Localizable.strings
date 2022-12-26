@@ -398,7 +398,7 @@
 "fxa.signin.ready-to-scan" = "Prêt·e à scanner";
 
 /* FxA sign in view email login button */
-"fxa.signin.use-email-instead" = "Utiliser plutôt une adresse électronique";
+"fxa.signin.use-email-instead" = "Utiliser plutôt une adresse e-mail";
 
 /* Button label to Sync your Firefox Account */
 "FxA.SyncNow" = "Synchroniser maintenant";
@@ -1490,7 +1490,7 @@
 "Settings.OfferClipboardBar.Title" = "Proposer d’ouvrir les liens copiés";
 
 /* Title for Open With Settings */
-"Settings.OpenWith.PageTitle" = "Ouvrir les liens des courriels avec";
+"Settings.OpenWith.PageTitle" = "Ouvrir les liens des e-mails avec";
 
 /* Label used as an item in Settings. When touched it will open a dialog to configure the open with (mail links) behavior. */
 "Settings.OpenWith.SectionName" = "Appli de messagerie électronique";
@@ -1665,6 +1665,12 @@
 
 /* Action label on share extension to search for the selected text in Firefox. */
 "ShareExtension.SeachInFirefoxAction.Title" = "Rechercher dans Firefox";
+
+/* Button in share sheet to copy the url of the current tab. */
+"ShareSheet.Copy.Title.v108" = "Copier";
+
+/* Button in the share sheet to send the current link to another device. */
+"ShareSheet.SendToDevice.Title.v108" = "Envoyer le lien à un appareil";
 
 /* Label for show search suggestions setting. */
 "Show Search Suggestions" = "Afficher les suggestions";
