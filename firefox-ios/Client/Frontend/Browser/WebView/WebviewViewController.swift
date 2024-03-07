@@ -38,7 +38,7 @@ class WebviewViewController: UIViewController, ContentContainable, Screenshotabl
     }
 
     func update(webView: WKWebView, isPrivate: Bool = false) {
-        DefaultLogger.shared.log("nb - WebviewViewController update webview with url \(webView.url)", level: .info, category: .nblog)
+        DefaultLogger.shared.log("nb - WebviewViewController update webview with url \(String(describing: webView.url))", level: .info, category: .nblog)
         self.webView = webView
         setupWebView()
     }

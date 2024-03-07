@@ -549,6 +549,7 @@ class BrowserViewController: UIViewController,
             }
 
             if state.reloadWebView {
+                DefaultLogger.shared.log("nb - NEW STATE reloadWebView", level: .info, category: .nblog)
                 updateContentInHomePanel(state.browserViewType)
             }
 
@@ -1164,7 +1165,6 @@ class BrowserViewController: UIViewController,
         if isAboutHomeURL {
             showEmbeddedHomepage(inline: true, isPrivate: tabManager.selectedTab?.isPrivate ?? false)
         } else if !url.absoluteString.hasPrefix("\(InternalURL.baseUrl)/\(SessionRestoreHandler.path)") {
-
             DefaultLogger.shared.log("nb - updateContentInHomePanel not a SESSION RESTORE \(String(describing: url))", level: .info, category: .nblog)
             showEmbeddedWebview()
             urlBar.locationView.reloadButton.isHidden = false
@@ -1456,7 +1456,9 @@ class BrowserViewController: UIViewController,
                 DefaultLogger.shared.log("nb - observe value NEW URL \(url)", level: .info, category: .nblog)
 
                 if tab === tabManager.selectedTab {
-                    DefaultLogger.shared.log("nb - observe value updateUIForReaderHomeStateForTab", level: .info, category: .nblog)
+                    DefaultLogger.shared.log("nb - observe value updateUIForReaderHomeStateForTab", 
+                                             level: .info,
+                                             category: .nblog)
                     updateUIForReaderHomeStateForTab(tab)
                 }
                 // Catch history pushState navigation, but ONLY for same origin navigation,
@@ -2878,7 +2880,9 @@ extension BrowserViewController: KeyboardHelperDelegate {
 extension BrowserViewController: SessionRestoreHelperDelegate {
     func sessionRestoreHelper(_ helper: SessionRestoreHelper, didRestoreSessionForTab tab: Tab) {
         if let tab = tabManager.selectedTab, tab.webView === tab.webView {
-            DefaultLogger.shared.log("nb - didRestoreSessionForTab will call updateUIForReaderHomeStateForTab", level: .info, category: .nblog)
+            DefaultLogger.shared.log("nb - didRestoreSessionForTab will call updateUIForReaderHomeStateForTab", 
+                                     level: .info,
+                                     category: .nblog)
             updateUIForReaderHomeStateForTab(tab)
         }
     }

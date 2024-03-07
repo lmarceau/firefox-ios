@@ -93,7 +93,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         _ scene: UIScene,
         openURLContexts URLContexts: Set<UIOpenURLContext>
     ) {
-        DefaultLogger.shared.log("nb - UIScene - URLContexts first -> \(URLContexts.first)", level: .info, category: .nblog)
+        DefaultLogger.shared.log("nb - UIScene - URLContexts first -> \(String(describing: URLContexts.first))", level: .info, category: .nblog)
         guard let url = URLContexts.first?.url,
               let route = routeBuilder.makeRoute(url: url) else { return }
         handle(route: route)
