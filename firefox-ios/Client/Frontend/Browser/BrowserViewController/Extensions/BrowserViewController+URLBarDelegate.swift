@@ -433,6 +433,8 @@ extension BrowserViewController: URLBarDelegate {
             searchController?.searchTelemetry?.recordURLBarSearchAbandonmentTelemetryEvent()
         }
         destroySearchController()
+
+        DefaultLogger.shared.log("nb - didLeaveOverlayModeForReason", level: .info, category: .nblog)
         updateInContentHomePanel(tabManager.selectedTab?.url as URL?)
 
         urlBar.applyTheme(theme: themeManager.currentTheme)

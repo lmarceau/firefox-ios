@@ -489,6 +489,7 @@ class Tab: NSObject, ThemeApplicable {
             // which allows the content appear beneath the toolbars in the BrowserViewController
             webView.scrollView.layer.masksToBounds = false
 
+            DefaultLogger.shared.log("nb - calling restore from create webview -> with \(String(describing: url))", level: .info, category: .nblog)
             restore(webView, interactionState: restoreSessionData)
 
             self.webView = webView
@@ -534,13 +535,18 @@ class Tab: NSObject, ThemeApplicable {
     }
 
     func restore(_ webView: WKWebView, interactionState: Data? = nil) {
-        DefaultLogger.shared.log("nb - restore outside url \(webView.url)", level: .info, category: .nblog)
-        if let url = url {
-            DefaultLogger.shared.log("nb - restore inside url \(url)", level: .info, category: .nblog)
-            webView.load(PrivilegedRequest(url: url) as URLRequest)
+        DefaultLogger.shared.log("nb - restore outside url \(String(describing: webView.url))", level: .info, category: .nblog)
+        if let lastRequest {
+            DefaultLogger.shared.log("nb - restore LAST REQUEST inside url \(String(describing: url))", level: .info, category: .nblog)
+            webView.load(lastRequest)
+        } else if let url {
+            DefaultLogger.shared.log("nb - restore NEW REQUEST inside with url \(url)", level: .info, category: .nblog)
+            let request = URLRequest(url: url)
+            lastRequest = request
+            webView.load(request)
         }
 
-        DefaultLogger.shared.log("nb - restore middle state \(webView.url)", level: .info, category: .nblog)
+        DefaultLogger.shared.log("nb - restore middle state \(String(describing: webView.url))", level: .info, category: .nblog)
         if let interactionState = interactionState {
             webView.interactionState = interactionState
             DefaultLogger.shared.log("nb - restore interaction state \(interactionState)", level: .info, category: .nblog)
@@ -638,10 +644,10 @@ class Tab: NSObject, ThemeApplicable {
                 DefaultLogger.shared.log("nb - loadRequest isPrivileged url exists -> \(url)", level: .info, category: .nblog)
                 return webView.loadFileURL(url, allowingReadAccessTo: url)
             }
-            DefaultLogger.shared.log("nb - loadRequest last reload url exists -> \(url)", level: .info, category: .nblog)
+            DefaultLogger.shared.log("nb - loadRequest last reload url exists -> \(String(describing: url))", level: .info, category: .nblog)
             return webView.load(request)
         }
-        DefaultLogger.shared.log("nb - loadRequest return nil val -> \(url)", level: .info, category: .nblog)
+        DefaultLogger.shared.log("nb - loadRequest return nil val -> \(String(describing: url))", level: .info, category: .nblog)
         return nil
     }
 
@@ -650,8 +656,8 @@ class Tab: NSObject, ThemeApplicable {
     }
 
     func reload(bypassCache: Bool = false) {
-        DefaultLogger.shared.log("nb - reload top before webview \(webView)", level: .info, category: .nblog)
-        DefaultLogger.shared.log("nb - reload top before url \(url)", level: .info, category: .nblog)
+        DefaultLogger.shared.log("nb - reload top before webview \(String(describing: webView))", level: .info, category: .nblog)
+        DefaultLogger.shared.log("nb - reload top before url \(String(describing: url))", level: .info, category: .nblog)
         // If the current page is an error page, and the reload button is tapped, load the original URL
         if let url = webView?.url, let internalUrl = InternalURL(url), let page = internalUrl.originalURLFromErrorPage {
             webView?.replaceLocation(with: page)
@@ -690,7 +696,7 @@ class Tab: NSObject, ThemeApplicable {
             restore(webView)
             DefaultLogger.shared.log("nb - reload restore scratch \(webView)", level: .info, category: .nblog)
         } else {
-            DefaultLogger.shared.log("nb - reload else \(webView)", level: .info, category: .nblog)
+            DefaultLogger.shared.log("nb - reload else \(String(describing: webView))", level: .info, category: .nblog)
         }
     }
 
@@ -1109,6 +1115,6 @@ class TabWebView: WKWebView, MenuHelperWebViewInterface, ThemeApplicable {
     }
 
     deinit {
-        DefaultLogger.shared.log("nb - tab webview deinit with tab url \(self.url)", level: .info, category: .nblog)
+        DefaultLogger.shared.log("nb - tab webview deinit with tab url \(String(describing: self.url))", level: .info, category: .nblog)
     }
 }

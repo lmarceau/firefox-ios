@@ -1127,12 +1127,15 @@ class BrowserViewController: UIViewController,
             return
         }
 
+        DefaultLogger.shared.log("nb - showEmbeddedWebview \(String(describing: webview.url))", level: .info, category: .nblog)
         browserDelegate?.show(webView: webview)
     }
 
     // MARK: - Update content
 
     func updateContentInHomePanel(_ browserViewType: BrowserViewType) {
+        DefaultLogger.shared.log("nb - updateContentInHomePanel)", level: .info, category: .nblog)
+
         switch browserViewType {
         case .normalHomepage:
             showEmbeddedHomepage(inline: true, isPrivate: false)
@@ -1151,6 +1154,8 @@ class BrowserViewController: UIViewController,
     func updateInContentHomePanel(_ url: URL?, focusUrlBar: Bool = false) {
         let isAboutHomeURL = url.flatMap { InternalURL($0)?.isAboutHomeURL } ?? false
         guard let url = url else {
+            DefaultLogger.shared.log("nb - updateContentInHomePanel NO URL \(String(describing: url))", level: .info, category: .nblog)
+
             showEmbeddedWebview()
             urlBar.locationView.reloadButton.reloadButtonState = .disabled
             return
@@ -1159,6 +1164,8 @@ class BrowserViewController: UIViewController,
         if isAboutHomeURL {
             showEmbeddedHomepage(inline: true, isPrivate: tabManager.selectedTab?.isPrivate ?? false)
         } else if !url.absoluteString.hasPrefix("\(InternalURL.baseUrl)/\(SessionRestoreHandler.path)") {
+
+            DefaultLogger.shared.log("nb - updateContentInHomePanel not a SESSION RESTORE \(String(describing: url))", level: .info, category: .nblog)
             showEmbeddedWebview()
             urlBar.locationView.reloadButton.isHidden = false
         }
@@ -1250,6 +1257,7 @@ class BrowserViewController: UIViewController,
         urlBar.currentURL = url
         overlayManager.finishEditing(shouldCancelLoading: false)
 
+        DefaultLogger.shared.log("nb - finishEditingAndSubmit loadRequest -> \(url)", level: .info, category: .nblog)
         if let nav = tab.loadRequest(URLRequest(url: url)) {
             self.recordNavigationInTab(tab, navigation: nav, visitType: visitType)
         }
@@ -1491,6 +1499,7 @@ class BrowserViewController: UIViewController,
                 hideReaderModeBar(animated: false)
             }
 
+            DefaultLogger.shared.log("nb - updateUIForReaderHomeStateForTab", level: .info, category: .nblog)
             updateInContentHomePanel(url as URL, focusUrlBar: focusUrlBar)
         }
     }
@@ -2638,9 +2647,11 @@ extension BrowserViewController: TabManagerDelegate {
             webView.accessibilityIdentifier = "contentView"
             webView.accessibilityElementsHidden = false
 
+            DefaultLogger.shared.log("nb - Selected tab show(webView: \(String(describing: tab.url))", level: .info, category: .nblog)
             browserDelegate?.show(webView: webView)
 
             if webView.url == nil {
+                DefaultLogger.shared.log("nb - Selected tab and has nil webview.url \(String(describing: tab.url))", level: .info, category: .nblog)
                 // The web view can go gray if it was zombified due to memory pressure.
                 // When this happens, the URL is nil, so try restoring the page upon selection.
                 tab.reload()

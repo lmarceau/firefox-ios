@@ -445,6 +445,7 @@ class LegacyTabManager: NSObject, FeatureFlaggable, TabManager, TabEventHandler 
     ) {
         // If network is not available webView(_:didCommit:) is not going to be called
         // We should set request url in order to show url in url bar even no network
+        DefaultLogger.shared.log("nb - configureTab, saving the tab URL -> \(tab.tabUUID)", level: .info, category: .nblog)
         tab.url = request?.url
         var placeNextToParentTab = false
         if parent == nil || parent?.isPrivate != tab.isPrivate {
@@ -471,12 +472,13 @@ class LegacyTabManager: NSObject, FeatureFlaggable, TabManager, TabEventHandler 
         }
 
         if !zombie {
+            DefaultLogger.shared.log("nb - configureTab, not a zombie, create webview -> \(tab.tabUUID)", level: .info, category: .nblog)
             tab.createWebview()
         }
         tab.navigationDelegate = self.navDelegate
 
         if let request = request {
-            DefaultLogger.shared.log("nb - tabUUID -> \(tab.tabUUID)", level: .info, category: .nblog)
+            DefaultLogger.shared.log("nb - configureTab tabUUID -> \(tab.tabUUID)", level: .info, category: .nblog)
             tab.loadRequest(request)
         } else if !isPopup {
             let newTabChoice = NewTabAccessors.getNewTabPage(profile.prefs)
