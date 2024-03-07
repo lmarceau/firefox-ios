@@ -536,14 +536,14 @@ class Tab: NSObject, ThemeApplicable {
 
     func restore(_ webView: WKWebView, interactionState: Data? = nil) {
         DefaultLogger.shared.log("nb - restore outside url \(String(describing: webView.url))", level: .info, category: .nblog)
-        if let lastRequest {
-            DefaultLogger.shared.log("nb - restore LAST REQUEST inside url \(String(describing: url))", level: .info, category: .nblog)
-            webView.load(lastRequest)
-        } else if let url {
-            DefaultLogger.shared.log("nb - restore NEW REQUEST inside with url \(url)", level: .info, category: .nblog)
-            let request = URLRequest(url: url)
-            lastRequest = request
-            webView.load(request)
+        if let url {
+            // THE CAUSE OF THE PROBLEM???
+            DefaultLogger.shared.log("laurie - restore NEW PRIVILEGED REQUEST inside url \(String(describing: url))", level: .info, category: .nblog)
+            webView.load(PrivilegedRequest(url: url) as URLRequest)
+            // will be the bugfix??
+//            DefaultLogger.shared.log("nb - restore NEW REQUEST inside with url \(url)", level: .info, category: .nblog)
+//            let request = URLRequest(url: url)
+//            webView.load(request)
         }
 
         DefaultLogger.shared.log("nb - restore middle state \(String(describing: webView.url))", level: .info, category: .nblog)

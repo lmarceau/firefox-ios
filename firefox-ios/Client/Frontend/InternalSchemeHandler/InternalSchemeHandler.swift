@@ -4,6 +4,7 @@
 
 import WebKit
 import Shared
+import Common
 
 enum InternalPageSchemeHandlerError: Error {
     case badURL
@@ -62,6 +63,7 @@ class InternalSchemeHandler: NSObject, WKURLSchemeHandler {
 
     func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
         guard let url = urlSchemeTask.request.url else {
+            DefaultLogger.shared.log("nb - start urlSchemeTask NO URL", level: .info, category: .nblog)
             urlSchemeTask.didFailWithError(InternalPageSchemeHandlerError.badURL)
             return
         }
@@ -72,20 +74,24 @@ class InternalSchemeHandler: NSObject, WKURLSchemeHandler {
         if !urlSchemeTask.request.isPrivileged,
            urlSchemeTask.request.mainDocumentURL != urlSchemeTask.request.url,
            downloadResource(urlSchemeTask: urlSchemeTask) {
+            DefaultLogger.shared.log("nb - start urlSchemeTask AS RESOURCE", level: .info, category: .nblog)
             return
         }
 
         if !urlSchemeTask.request.isPrivileged {
+            DefaultLogger.shared.log("nb - start urlSchemeTask NOT PRIVILEGED", level: .info, category: .nblog)
             urlSchemeTask.didFailWithError(InternalPageSchemeHandlerError.notAuthorized)
             return
         }
 
         guard let responder = InternalSchemeHandler.responders[path] else {
+            DefaultLogger.shared.log("nb - start urlSchemeTask NO RESPONDER", level: .info, category: .nblog)
             urlSchemeTask.didFailWithError(InternalPageSchemeHandlerError.noResponder)
             return
         }
 
         guard let (urlResponse, data) = responder.response(forRequest: urlSchemeTask.request) else {
+            DefaultLogger.shared.log("nb - start urlSchemeTask UNHABLE", level: .info, category: .nblog)
             urlSchemeTask.didFailWithError(InternalPageSchemeHandlerError.responderUnableToHandle)
             return
         }
