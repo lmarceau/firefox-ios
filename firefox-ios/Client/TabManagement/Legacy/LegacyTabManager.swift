@@ -495,6 +495,7 @@ class LegacyTabManager: NSObject, FeatureFlaggable, TabManager, TabEventHandler 
                 // The common case, where the NewTabPage enum defines
                 // one of the about:home pages.
                 if let url = newTabChoice.url {
+                    DefaultLogger.shared.log("nb - default newTabChoice WTH", level: .info, category: .nblog)
                     tab.loadRequest(PrivilegedRequest(url: url) as URLRequest)
                     tab.url = url
                 }

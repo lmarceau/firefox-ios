@@ -42,6 +42,7 @@ extension BrowserViewController: WKUIDelegate {
             configuration: configuration
         )
 
+        DefaultLogger.shared.log("nb - createWebViewWith saving tab URL to about:blank", level: .info, category: .nblog)
         newTab.url = URL(string: "about:blank")
 
         return newTab.webView
@@ -878,6 +879,8 @@ extension BrowserViewController: WKNavigationDelegate {
 
         searchTelemetry?.trackTabAndTopSiteSAP(tab, webView: webView)
         webviewTelemetry.start()
+
+        DefaultLogger.shared.log("nb - didCommit saving tab URL \(String(describing: webView.url))", level: .info, category: .nblog)
         tab.url = webView.url
 
         // Only update search term data with valid search term data
@@ -909,6 +912,7 @@ extension BrowserViewController: WKNavigationDelegate {
         self.scrollController.resetZoomState()
 
         if tabManager.selectedTab === tab {
+            DefaultLogger.shared.log("nb - didCommit will call updateUIForReaderHomeStateForTab", level: .info, category: .nblog)
             updateUIForReaderHomeStateForTab(tab, focusUrlBar: true)
             updateFakespot(tab: tab, isReload: true)
         }
