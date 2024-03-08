@@ -1128,6 +1128,12 @@ class BrowserViewController: UIViewController,
             return
         }
 
+        // Bug fix next attempt
+        if webview.url == nil {
+            DefaultLogger.shared.log("laurie - showEmbeddedWebview is NIL \(String(describing: webview.url))", level: .info, category: .nblog)
+//            tabManager.selectedTab?.reload()
+        }
+
         DefaultLogger.shared.log("nb - showEmbeddedWebview \(String(describing: webview.url))", level: .info, category: .nblog)
         browserDelegate?.show(webView: webview)
     }
