@@ -1462,7 +1462,7 @@ class BrowserViewController: UIViewController,
                 DefaultLogger.shared.log("nb - observe value NEW URL \(url)", level: .info, category: .nblog)
 
                 if tab === tabManager.selectedTab {
-                    DefaultLogger.shared.log("nb - observe value updateUIForReaderHomeStateForTab", 
+                    DefaultLogger.shared.log("nb - observe value updateUIForReaderHomeStateForTab",
                                              level: .info,
                                              category: .nblog)
                     updateUIForReaderHomeStateForTab(tab)
@@ -2886,7 +2886,7 @@ extension BrowserViewController: KeyboardHelperDelegate {
 extension BrowserViewController: SessionRestoreHelperDelegate {
     func sessionRestoreHelper(_ helper: SessionRestoreHelper, didRestoreSessionForTab tab: Tab) {
         if let tab = tabManager.selectedTab, tab.webView === tab.webView {
-            DefaultLogger.shared.log("nb - didRestoreSessionForTab will call updateUIForReaderHomeStateForTab", 
+            DefaultLogger.shared.log("nb - didRestoreSessionForTab will call updateUIForReaderHomeStateForTab",
                                      level: .info,
                                      category: .nblog)
             updateUIForReaderHomeStateForTab(tab)

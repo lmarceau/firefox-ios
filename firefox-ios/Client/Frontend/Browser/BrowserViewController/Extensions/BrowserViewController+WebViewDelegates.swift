@@ -912,7 +912,7 @@ extension BrowserViewController: WKNavigationDelegate {
         self.scrollController.resetZoomState()
 
         if tabManager.selectedTab === tab {
-            DefaultLogger.shared.log("nb - didCommit will call updateUIForReaderHomeStateForTab", 
+            DefaultLogger.shared.log("nb - didCommit will call updateUIForReaderHomeStateForTab",
                                      level: .info,
                                      category: .nblog)
             updateUIForReaderHomeStateForTab(tab, focusUrlBar: true)

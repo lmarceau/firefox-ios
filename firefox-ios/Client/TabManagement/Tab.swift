@@ -537,7 +537,7 @@ class Tab: NSObject, ThemeApplicable {
     func restore(_ webView: WKWebView, interactionState: Data? = nil) {
         DefaultLogger.shared.log("nb - restore outside url \(String(describing: webView.url))", level: .info, category: .nblog)
         if let url {
-            DefaultLogger.shared.log("laurie - restore NEW REQUEST inside url \(String(describing: url))", 
+            DefaultLogger.shared.log("laurie - restore NEW REQUEST inside url \(String(describing: url))",
                                      level: .info,
                                      category: .nblog)
             webView.load(URLRequest(url: url))
