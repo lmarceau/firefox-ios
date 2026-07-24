@@ -33,16 +33,20 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - name: Check PR is not from a fork
+      - name: Check PR head is same repo as base
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          # Fail closed: on any API error or unexpected result, default to 'true' (treat as a
-          # fork) and bail, so the secret-bearing steps below never run for a fork PR.
-          IS_FORK=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }} --jq '.head.repo.fork' || echo 'true')
-          if [[ "${IS_FORK:-true}" != "false" ]]; then
-            echo "PR is from a fork (or fork status could not be confirmed); refusing to run."
+          # Refuse to run if the PR head is in a different repo than the base.
+          # We compare full_name because .head.repo.fork is true whenever the head repo is
+          # itself a fork of some upstream, which incorrectly rejects same-repo PRs on
+          # personal forks of this repository.
+          # Fail closed: on any API error or unexpected result, default to 'false' and bail
+          # so the secret-bearing steps below never run for a cross-repo PR.
+          IS_SAME_REPO=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }} --jq '.head.repo.full_name == .base.repo.full_name' || echo 'false')
+          if [[ "${IS_SAME_REPO:-false}" != "true" ]]; then
+            echo "PR head is in a different repo than the base (or status could not be confirmed); refusing to run."
             exit 1
           fi
 
