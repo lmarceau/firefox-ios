@@ -278,7 +278,7 @@
 "Downloads.Toast.GoToDownloads.Button" = "Ներբեռնումներ";
 
 /* The description text in the Download progress toast for showing the number of files when multiple files are downloading. %d is the total number of files. */
-"Downloads.Toast.MultipleFiles.DescriptionText" = "1-ը %d ֆայլերից";
+"Downloads.Toast.MultipleFiles.DescriptionText" = "1-ը %d ֆայլից";
 
 /* The description text in the Download progress toast for showing the number of files (%1$@) and download progress (%2$@). This string only consists of two placeholders for purposes of displaying two other strings side-by-side where %1$@ is Downloads.Toast.MultipleFiles.DescriptionText and %2$@ is Downloads.Toast.Progress.DescriptionText. This string should only consist of the two placeholders side-by-side separated by a single space and %1$@ should come before %2$@ everywhere except for right-to-left locales. */
 "Downloads.Toast.MultipleFilesAndProgress.DescriptionText" = "%1$@ %2$@";
@@ -1500,6 +1500,9 @@
 
 /* Button label that appears in the settings to prompt the user to sign in to Firefox for iOS sync service to sync and save data. */
 "Settings.Sync.ButtonTitle.v103" = "Համաժամեցնել և պահել տվյալները";
+
+/* In the settings account row, shown transiently while the user is being signed out of their account. */
+"Settings.Sync.SigningOut.Title.v154" = "Դուրս գրում…";
 
 /* Title for the page where the user sign in to their Firefox Sync account. */
 "Settings.Sync.SignInView.Title.v103" = "Համաժամեցնել և պահել տվյալները";
