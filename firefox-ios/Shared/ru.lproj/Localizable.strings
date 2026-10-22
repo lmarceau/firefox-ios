@@ -221,7 +221,7 @@
 "CoverSheet.v24.ETP.Description" = "Встроенная улучшенная защита от отслеживания помогает запретить рекламе отслеживать вас. Включите Строгую защиту, чтобы заблокировать ещё больше трекеров, рекламы и всплывающих окон.";
 
 /* Text for the new ETP settings button */
-"CoverSheet.v24.ETP.Settings.Button" = "Перейти в параметры";
+"CoverSheet.v24.ETP.Settings.Button" = "Перейти в настройки";
 
 /* Title for the new ETP mode i.e. standard vs strict */
 "CoverSheet.v24.ETP.Title" = "Защита от рекламного отслеживания";
@@ -1500,6 +1500,9 @@
 
 /* Button label that appears in the settings to prompt the user to sign in to Firefox for iOS sync service to sync and save data. */
 "Settings.Sync.ButtonTitle.v103" = "Синхронизация и сохранение данных";
+
+/* In the settings account row, shown transiently while the user is being signed out of their account. */
+"Settings.Sync.SigningOut.Title.v154" = "Выход…";
 
 /* Title for the page where the user sign in to their Firefox Sync account. */
 "Settings.Sync.SignInView.Title.v103" = "Синхронизация и сохранение данных";
