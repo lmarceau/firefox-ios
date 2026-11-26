@@ -839,7 +839,7 @@
 "Menu.TrackingProtectionDescription.CryptominersNew" = "Ťažba kryptomien používa výpočtový výkon vášho zariadenia na získavanie digitálnych mien. Bežiace skripty vybíjajú vašu batériu, spomaľujú zariadenie a zvyšujú váš účet za elektrinu.";
 
 /* Description of fingerprinters. */
-"Menu.TrackingProtectionDescription.Fingerprinters" = "Každý používateľ môže mať odlišné nastavenie prehliadača a počítača. Zberom údajov o nastaveniach možno vytvoriť unikátny odtlačok, ktorý potom môže slúžiť na vaše sledovanie.";
+"Menu.TrackingProtectionDescription.Fingerprinters" = "Nastavenia vo vašom prehliadači a počítači sú jedinečné. Odtlačky prehliadača zhromažďujú rôzne tieto jedinečné nastavenia, aby vytvorili váš profil, ktorý možno použiť na sledovanie vášho prehliadania.";
 
 /* Description of social network trackers. */
 "Menu.TrackingProtectionDescription.SocialNetworksNew" = "Sociálne siete umiestňujú na iné webové stránky prvky, pomocou ktorých o vás môžu získavať údaje. Blokovanie týchto prvkov obmedzuje množstvo informácií, ktoré o vás sociálne siete na internete získavajú.";
@@ -1501,6 +1501,9 @@
 /* Button label that appears in the settings to prompt the user to sign in to Firefox for iOS sync service to sync and save data. */
 "Settings.Sync.ButtonTitle.v103" = "Synchronizovať a uložiť údaje";
 
+/* In the settings account row, shown transiently while the user is being signed out of their account. */
+"Settings.Sync.SigningOut.Title.v154" = "Odhlasuje sa…";
+
 /* Title for the page where the user sign in to their Firefox Sync account. */
 "Settings.Sync.SignInView.Title.v103" = "Synchronizácia a ukladanie údajov";
 
@@ -1679,7 +1682,7 @@
 "TabTray.CurrentSelectedTab.A11Y" = "Aktuálne vybratá karta.";
 
 /* In the tab tray, when tab groups appear and there exist tabs that don't belong to any group, those tabs are listed under this header as “Others”. */
-"TabTray.Header.FilteredTabs.SectionHeader" = "Iné";
+"TabTray.Header.FilteredTabs.SectionHeader" = "Ostatné";
 
 /* Title for the inactive tabs section. This section groups all tabs that haven't been used in a while. */
 "TabTray.InactiveTabs.SectionTitle" = "Neaktívne karty";

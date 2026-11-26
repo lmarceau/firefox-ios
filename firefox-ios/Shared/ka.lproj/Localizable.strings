@@ -1481,7 +1481,7 @@
 "Settings.Siri.OpenTabShortcut" = "ახალი ჩანართის გახსნა";
 
 /* The description that describes what siri shortcuts are */
-"Settings.Siri.SectionDescription" = "Siri-ს მალსახმობების გამოყენება, Firefox-ის სწრაფად გახსნისთვის";
+"Settings.Siri.SectionDescription" = "Siri-ს მალსახმობების გამოყენება, Firefox რომ სწრაფად გაიხსნას";
 
 /* The option that takes you to the siri shortcuts settings page */
 "Settings.Siri.SectionName" = "Siri-ს მალსახმობები";
@@ -1500,6 +1500,9 @@
 
 /* Button label that appears in the settings to prompt the user to sign in to Firefox for iOS sync service to sync and save data. */
 "Settings.Sync.ButtonTitle.v103" = "დასინქრონება და შენახვა";
+
+/* In the settings account row, shown transiently while the user is being signed out of their account. */
+"Settings.Sync.SigningOut.Title.v154" = "გამოდის…";
 
 /* Title for the page where the user sign in to their Firefox Sync account. */
 "Settings.Sync.SignInView.Title.v103" = "დასინქრონება და შენახვა";
