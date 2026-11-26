@@ -887,7 +887,7 @@
 "Oops! Firefox crashed" = "Firefox uległ awarii :(";
 
 /* See http://mzl.la/1LXbDOL */
-"Open articles in Reader View by tapping the book icon when it appears in the title bar." = "Otwieraj artykuły w widoku poprawionej czytelności stukając ikonę książki, kiedy pojawi się w pasku adresu.";
+"Open articles in Reader View by tapping the book icon when it appears in the title bar." = "Otwieraj artykuły w widoku poprawionej czytelności, stukając ikonę książki, kiedy pojawi się w pasku adresu.";
 
 /* See http://mzl.la/1G7uHo7 */
 "Open Settings" = "Otwórz ustawienia";
@@ -983,7 +983,7 @@
 "Sans-serif" = "Bezszeryfowa";
 
 /* See http://mzl.la/1LXbDOL */
-"Save pages to your Reading List by tapping the book plus icon in the Reader View controls." = "Zachowuj strony w czytelni stukając ikonę książki w widoku poprawionej czytelności.";
+"Save pages to your Reading List by tapping the book plus icon in the Reader View controls." = "Zachowuj strony w czytelni, stukając ikonę książki w widoku poprawionej czytelności.";
 
 /* OK button to dismiss the error prompt. */
 "ScanQRCode.Error.OK.Button" = "OK";
@@ -1500,6 +1500,9 @@
 
 /* Button label that appears in the settings to prompt the user to sign in to Firefox for iOS sync service to sync and save data. */
 "Settings.Sync.ButtonTitle.v103" = "Synchronizuj i zachowuj dane";
+
+/* In the settings account row, shown transiently while the user is being signed out of their account. */
+"Settings.Sync.SigningOut.Title.v154" = "Wylogowywanie…";
 
 /* Title for the page where the user sign in to their Firefox Sync account. */
 "Settings.Sync.SignInView.Title.v103" = "Synchronizuj i zachowuj dane";
